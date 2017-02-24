@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博雅首页</title>
+    <style type="text/css">
+
+        /*-------------------------------================标题栏区====================-----------------------------*/
+
+        /*去除所有的margin和padding值*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*整个父窗体容器*/
+        body {
+            font-family: "Microsoft Sans Serif", "SimSun";
+            height: 8888px;
+        }
+
+        /*整个父容器标签*/
+        .header {
+            height: 58px;
+            background-color: #191D3A;
+        }
+
+        /*logo标签*/
+        .header .logo {
+
+            float: left;
+            padding-left: 12px;
+            margin-right: 39px;
+            width: 174px;
+            height: 58px;
+
+        }
+
+        .inner_c {
+            width: 1000px;
+            margin: 0 auto;
+
+        }
+
+        /*给logo添加响应是标签*/
+        .header .logo a {
+            display: block;
+            width: 174px;
+            height: 58px;
+            background: url(images/logo.png) no-repeat;
+            text-indent: -999em;
+        }
+
+        /*导航栏目总标签*/
+        .header .nav {
+            float: left;
+            width: 607px;
+            height: 58px;
+            border-left: 1px solid #252947;
+        }
+
+        /*去除所有NativeBar的ul标签*/
+        .header .nav ul {
+            list-style: none;
+        }
+
+        /*对NativeBar所有li标签进行管理*/
+
+        .header .nav ul li {
+
+            float: left;
+            width: 100px;
+            height: 58px;
+            border-left: 1px solid #252947;
+
+        }
+
+        /*最后一个NativeBar标签*/
+        .header .nav ul li.last {
+
+            border-right: 1px solid #252947;
+
+        }
+
+        /*管理NativeBar所有li标签的link链接*/
+
+        .header .nav ul li a {
+            display: block;
+            width: 100px;
+            height: 58px;
+            text-align: center;
+            line-height: 58px;
+            color: #818496;
+            font-size: 14px;
+            text-decoration: none;
+
+        }
+
+        /*虚线*/
+        .cl {
+            clear: both;
+        }
+
+        /*广告位*/
+        .banner {
+            height: 465px;
+            background: url(images/banner.jpg) no-repeat center center;
+        }
+
+        /*手式抬起NativeBar的状态*/
+        .header .nav ul li a:hover {
+
+            background-color: #252947;
+            color: #E2E4ED;
+
+        }
+
+        /*陌认选择的首页导航栏item*/
+        .header .nav ul li.current a {
+            background-color: #252947;
+            color: #E2E4ED;
+        }
+
+        /*加入我们的标签*/
+        .header .join {
+            float: left;
+            padding-top: 12px;
+            padding-left: 48px;
+        }
+
+        /*/加入我们标签item样式处理*/
+        .header .join a {
+
+            display: block;
+            width: 98px;
+            height: 32px;
+            background-color: #38B774;
+            /*IE8开始兼容,CSS3上开始介绍*/
+            /*做成圆角的*/
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            text-decoration: none;
+            border: 1px solid #3ACA7A;
+            color: white;
+            font-size: 14px;
+
+        }
+
+        /*抬起手势动作加入我们,颜色状态变化*/
+        .header .join a:hover {
+
+            background-color: #48C784;
+
+        }
+
+        /*-------------------------------================内容区====================-----------------------------*/
+
+        /*添加背景图片*/
+        .content {
+            padding-top: 50px;
+            height: 650px;
+            background: url(images/indexmainbg.jpg) no-repeat center bottom;
+        }
+
+        /*添加商品列表区*/
+        .content .product {
+            height: 229px;
+            border-bottom: 1px solid #DBE1E7;
+        }
+
+        /*去除标签点*/
+        .content .product ul {
+            list-style: none;
+        }
+
+        /*给每一个product商品列表ul,li标签,设置宽高*/
+        .content .product ul li {
+
+            float: left;
+            width: 218px;
+            height: 229px;
+            margin-right: 43px;
+
+        }
+
+        /*最后一个标签,限定宽度*/
+        .content .product ul li.last {
+            width: 217px;
+            margin-right: 0;
+        }
+
+        /*给每一个img标签是指宽高*/
+        .content .product ul li p.pro_img img {
+
+            width: 100%;
+            height: 130px;
+
+        }
+
+        /*让播放链接文本居中*/
+        .content .product ul li p.play {
+            text-align: center;
+        }
+
+        /*给每一个文章列表提供小箭头*/
+        .content .product ul li p.play a {
+
+            font-size: 12px;
+            line-height: 12px;
+            color: #38B774;
+            text-decoration: none;
+            padding-right: 10px;
+            background: url(images/sanjiaoxing.png) no-repeat right center;
+
+        }
+
+        /*添加文本域的背景字号*/
+        .content .product ul li h3 {
+            text-align: center;
+            line-height: 38px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /*-------------------------------================信息共享区====================-----------------------------*/
+
+        /*让整个信息共享区距离上面53px*/
+        .content .info {
+            padding-top: 53px;
+        }
+
+        /*给博雅新闻列表区设置行高宽*/
+        .content .info .boyanews {
+            float: left;
+            width: 500px;
+            background: url(images/bynewsbg.jpg) no-repeat;
+            padding-top: 111px;
+            position: relative;
+        }
+
+        /*给博雅招聘列表区设置行高宽*/
+        .content .info .boyajobs {
+            float: left;
+            width: 500px;
+            height: 314px;
+
+            background: url(images/byhrbg3.jpg) no-repeat;
+        }
+
+        .content .info .boyanews ul li {
+
+            line-height: 50px;
+            border-bottom: 1px solid #DBE1E7;
+            font-size: 12px;
+
+        }
+
+        .content .info .boyanews ul li.last{
+            border-bottom: 0px solid #DBE1E7;
+
+        }
+
+        .content .info .boyanews ul li span {
+
+            color: #AFBECF;
+            margin-right: 22px;
+
+        }
+
+        /*新闻列表li标签链接*/
+        .content .info .boyanews ul li a {
+
+            color: #444866;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /*当手势抬起的时候,对应li标签的颜色变化*/
+        .content .info .boyanews ul li a:hover {
+            color: orange;
+        }
+
+        /*去除标签点*/
+        .content .info .boyanews ul {
+            list-style: none;
+            padding: 0 20px;
+        }
+
+        /*给盒子设置相对定位*/
+        .content .info .boyajobs {
+            position: relative;
+        }
+
+        /*设置招聘信息栏目的标题栏*/
+        .content .info .boyajobs .title {
+            padding-top: 40px;
+            padding-left: 78px;
+        }
+
+        /*专场招聘*/
+        h4 {
+            padding-top: 18px;
+            padding-left: 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /*专场招聘的无序列表*/
+        .content .info .boyajobs ul {
+            padding-left: 20px;
+            width: 305px;
+            list-style: none;
+        }
+
+        /*专场招聘的无序列表item行高设置*/
+        .content .info .boyajobs ul li {
+            border-bottom: 1px solid #6FDEA3;
+            line-height: 37px;
+
+        }
+
+        /*第二个more标签区域设置*/
+        .content .info .boyajobs .more2 {
+            position: absolute;
+            top: 40px;
+            left: 218px;
+        }
+
+        /*专场招聘的无序列表item字体设置*/
+        .content .info .boyajobs ul li a {
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .content .info .boyajobs ul li a:hover {
+            background-color: orange;
+        }
+
+        .content .info .boyanews .more {
+            position: absolute;
+            top: 40px;
+            left: 218px;
+        }
+
+        .content .info .boyajobs .title h3 {
+            width: 119px;
+            height: 51px;
+            background: url(images/zczp.png) no-repeat;
+            text-indent: -999em;
+        }
+
+        .content .info .boyajobs ul {
+
+            padding-left: 20px;
+            width: 305px;
+            list-style: none;
+
+        }
+
+        .content .info .boyajobs ul li {
+
+            border-bottom: 1px solid #6FDEA3;
+            line-height: 37px;
+        }
+
+        .content .info .boyajobs ul li a {
+
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .content .info .boyajobs ul li a:hover {
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-------首页title布局-------->
+
+<div class="header">
+    <div class="inner_c">
+        <div class="logo">
+            <a href="#">
+                博雅互动是一家世界上最好的招聘公司
+            </a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li class="current">
+                    <a href="#">首页</a>
+                </li>
+
+                <li>
+                    <a href="#">博雅游戏</a>
+                </li>
+
+                <li class="xiaoming">
+                    <a href="#">博雅新闻</a>
+                </li>
+
+                <li>
+                    <a href="#">关于我们</a>
+                </li>
+
+                <li>
+                    <a href="#">客服中心</a>
+                </li>
+
+                <li class="last">
+                    <a href="#">投资者关系</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="join">
+            <a href="#">欢迎加入我们</a>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="cl"></div>
+
+<!------广告位----->
+
+<div class="banner"></div>
+<!------内容区----->
+
+<div class="content">
+    <div class="inner_c">
+        <div class="product">
+            <ul>
+
+                <li>
+                    <p class="pro_img">
+                        <img src="images/bpt.jpg" alt="">
+                    </p>
+                    <h3>BPT宣传图</h3>
+                    <p class="play"><a href="#">点击播放</a></p>
+                </li>
+
+                <li>
+                    <p class="pro_img">
+                        <img src="images/gamepic1.jpg" alt="">
+                    </p>
+                    <h3>BPT宣传图</h3>
+                    <p class="play"><a href="#">点击播放</a></p>
+                </li>
+
+                <li>
+                    <p class="pro_img">
+                        <img src="images/gamepic3.jpg" alt="">
+                    </p>
+                    <h3>BPT宣传图</h3>
+                    <p class="play"><a href="#">点击播放</a></p>
+                </li>
+
+                <li class="last">
+                    <p class="pro_img">
+                        <img src="images/video.jpg" alt="">
+                    </p>
+                    <h3>BPT宣传图</h3>
+                    <p class="play"><a href="#">点击播放</a></p>
+                </li>
+
+            </ul>
+        </div>
+        <div class="info">
+
+            <div class="boyanews">
+                <a href class="more">
+                    <img src="images/more.png" alt=""/>
+                </a>
+
+                <ul>
+
+                    <li>
+                        <span>09 / 08</span>
+                        <a href="">
+                            2015博雅国际博客大赛（BPT）在澳门落幕
+                        </a>
+                    </li>
+
+                    <li>
+                        <span>09 / 08</span>
+                        <a href="">
+                            2015博雅国际博客大赛（BPT）在澳门落幕
+                        </a>
+                    </li>
+
+                    <li>
+                        <span>09 / 08</span>
+                        <a href="">
+                            2015博雅国际博客大赛（BPT）在澳门落幕
+                        </a>
+                    </li>
+
+                    <li class="last">
+                        <span>09 / 08</span>
+                        <a href="">
+                            2015博雅国际博客大赛（BPT）在澳门落幕
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="boyajobs">
+
+                <a href="" class="more2">
+                    <img src="images/more2.png" alt="">
+                </a>
+
+                <div class="title">
+                    <h3>
+                        博雅招聘
+                    </h3>
+                </div>
+
+                <h4>专场招聘岗位:</h4>
+
+                <ul>
+                    <li><a href="#">PHP开发工程师</a></li>
+                    <li><a href="#">C++开发工程师</a></li>
+                    <li><a href="#">Web前端开发工程师</a></li>
+                    <li><a href="#">大数据开发工程师</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
